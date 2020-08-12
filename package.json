@@ -2,7 +2,7 @@
   "name": "koa2-oauth2-server",
   "version": "0.0.1",
   "description": "This project manage persons, identifing them, authorizing, forbidding, registering etc",
-  "main": "index.js",
+  "main": "build/koaOauhServer",
   "author": "Afonso Araújo Neto",
   "license": "MIT",
   "scripts": {
@@ -11,7 +11,6 @@
     "build": "npm run clear && babel src --extensions \".es6,.js,.es,.jsx,.mjs,.ts\" --ignore *.test.js --out-dir build --copy-files && tsc --emitDeclarationOnly",
     "clear": "rimraf ./build",
     "prestart": "npm run build",
-    "start": "nodemon ./build/server",
     "jest": "jest --no-cache --detectOpenHandles"
   },
   "dependencies": {
