@@ -1,10 +1,8 @@
 import koa from 'koa';
 import OAuth2, {Request, Response, UnauthorizedRequestError} from 'oauth2-server';
+import debug from 'debug';
 
-import { appLogger } from "./appLogger";
-
-
-const log = appLogger.extend('koaOauthServer');
+const log = debug('koaOauthServer:entry');
 
 export const koaOauhServer = (options: OAuth2.ServerOptions) => {
 
