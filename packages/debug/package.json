@@ -1,0 +1,31 @@
+{
+  "name": "@koa2oauth2/debug",
+  "version": "0.0.1",
+  "description": "This project is idea for utilizing oauth2 server with koa2 server",
+  "private": "true",
+  "main": "./build",
+  "author": "Afonso Araújo Neto",
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "babel": "babel-node --extensions \".es6,.js,.es,.jsx,.mjs,.ts,.tsx\"",
+    "build": "npm run clear && babel src --extensions \".es6,.js,.es,.jsx,.mjs,.ts\" --ignore *.test.js --out-dir build --copy-files && tsc --emitDeclarationOnly",
+    "clear": "rimraf ./build",
+    "prestart": "npm run build",
+    "jest": "jest --no-cache --detectOpenHandles"
+  },
+  "dependencies": {
+    "debug": "^4.1.1",
+    "tslint": "^6.1.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/node": "^7.10.5",
+    "@babel/plugin-transform-runtime": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.0.2"
+  }
+}
