@@ -4,9 +4,15 @@ import debug from 'debug';
 
 const log = debug('koaOauthServer:entry');
 
+
+export interface IKoaOauth2Context extends koa.DefaultContext {
+    authenticate: () => {};
+    authorize: () => {};
+    token: () => (next: any) => Promise<any>;
+};
 export const koaOauhServer = (options: OAuth2.ServerOptions) => {
 
-    const app = new koa();
+    const app = new koa<koa.DefaultState, IKoaOauth2Context>();
 
     const oauth = new OAuth2(options);
 
