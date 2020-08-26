@@ -1,8 +1,8 @@
 import koa from 'koa';
 import OAuth2, {Request, Response, UnauthorizedRequestError} from 'oauth2-server';
-import debug from 'debug';
+import {appLogger} from '@koa2oauth2/debug';
 
-const log = debug('koaOauthServer:entry');
+const log = appLogger.extend('entry');
 
 
 export interface IKoaOauth2Context extends koa.DefaultContext {

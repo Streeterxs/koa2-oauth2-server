@@ -1,6 +1,6 @@
 import { User, OAuthTokens, OAuthClient } from "./model";
 import OAuth2 from 'oauth2-server';
-import { koaOauhServer } from "../../koaOauhServer";
+import { koaOauhServer } from "@koa2oauth2/server";
 
 const model:
     OAuth2.AuthorizationCodeModel |

@@ -1,9 +1,8 @@
 import mongoose, { Schema } from "mongoose";
 import bcrypt from 'bcrypt';
 
-import { Callback, Token, Client } from "oauth2-server";
-import { testsLogger } from "../../../testLogger";
-import { appLogger } from "../../../appLogger";
+import { testsLogger } from "../../../../src/testLogger";
+import { appLogger } from "../../../../src/appLogger";
 
 
 let log;

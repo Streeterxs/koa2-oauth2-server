@@ -1,8 +1,8 @@
 import mongoose, { Schema } from "mongoose";
 
 import { Callback, Token, Client } from "oauth2-server";
-import { testsLogger } from "../../../testLogger";
-import { appLogger } from "../../../appLogger";
+import { testsLogger } from "@koa2oauth2/debug";
+import { appLogger } from "@koa2oauth2/debug";
 import { IUser } from "./UserModel";
 
 
