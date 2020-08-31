@@ -1,1 +1,1 @@
-export * from './koaOauhServer';
+export * from './koaOauthServer';
