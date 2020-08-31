@@ -53,7 +53,7 @@ export const koaOauthServer = (options: OAuth2.ServerOptions) => {
 
             try {
                 context.state.oauth = {
-                    code: await context.oauth.authorize(request, response)
+                    code: await oauth.authorize(request, response)
                 };
 
                 context.body = response.body;
@@ -89,7 +89,7 @@ export const koaOauthServer = (options: OAuth2.ServerOptions) => {
             try {
 
                 context.state.oauth = {
-                    token: await context.oauth.token(request, response)
+                    token: await oauth.token(request, response)
                 };
 
                 context.body = response.body;
