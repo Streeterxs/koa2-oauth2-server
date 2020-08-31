@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "This project is idea for utilizing oauth2 server with koa2 server",
   "private": "true",
-  "main": "build/koaOauhServer",
+  "main": "build/koaOauthServer",
   "author": "Afonso Araújo Neto",
   "license": "MIT",
   "scripts": {
