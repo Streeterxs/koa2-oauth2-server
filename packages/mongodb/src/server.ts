@@ -1,7 +1,10 @@
-import { User, OAuthTokens, OAuthClient } from "./model";
 import OAuth2 from 'oauth2-server';
-import { koaOauhServer } from "@koa2oauth2/server";
+import Koa from 'koa';
 
+import { User, OAuthTokens, OAuthClient } from "./model";
+import {koaOauthServer} from '@koa2oauth2/server';
+
+const app = new Koa()
 const model:
     OAuth2.AuthorizationCodeModel |
     OAuth2.ClientCredentialsModel |
@@ -16,13 +19,14 @@ const model:
         getUser: User.getUser
     };
 
-const app = koaOauhServer({
+const {
+    authenticate,
+    authorize,
+    token
+} = koaOauthServer({
     model
 });
 
-app.use(async (context, next) => {
-    context.authenticate();
-    await next();
-});
+app.use(authenticate());
 
 app.listen('3000');
