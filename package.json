@@ -7,6 +7,8 @@
   "author": "Afonso Araújo Neto",
   "license": "MIT",
   "scripts": {
+    "delete:node_modules": "find . -name \"node_modules\" -exec rm -rf '{}' +",
+    "preinstall": "yarn delete:node_modules",
     "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
     "babel": "babel-node --extensions \".es6,.js,.es,.jsx,.mjs,.ts,.tsx\"",
     "build": "npm run clear && babel src --extensions \".es6,.js,.es,.jsx,.mjs,.ts\" --ignore *.test.js --out-dir build --copy-files && tsc --emitDeclarationOnly",
